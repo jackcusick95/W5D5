@@ -7,7 +7,7 @@ end
 
 def bad_years
   # List the years in which a movie with a rating above 8 was not released.
-
+  Movie.select(:yr).group('movies.id').order('yr DESC').having('yr.first < 8')
 end
 
 def cast_list(title)
